@@ -1,0 +1,18 @@
+{
+  "exercise_id": "engineering-screener",
+  "files": {
+    ".github/workflows/smoke.yml": "2cbf816302b46c1bf016e01ee68fba9a8c440c3b24ca8482a8247dde3aa94872",
+    ".gitignore": "7302863dbdec542d6e85f3f21e52c58f505ad1943b3b39e4a69a8123b464b453",
+    "README.md": "c3ff178772438131c682dea5bd7f1e96cb8e4f4e2fb12dbee540ab78749ba80d",
+    "ai-proposal.md": "da185fa7d8ecbb7b7b769053679a01ba4045cdd8e15fe715397b3163f1078437",
+    "fixtures/cases.json": "864cf2a10be2c7c00b2a0850e08e9f2ab51a0a5dab4a042ae2a9302b297b82c1",
+    "reconcile.py": "bcedd3616f6548ba6863e03cf5388ad03c9dc15092ee3f7a35de8bac5fc33f36",
+    "response.md": "6bd8942e5d0739c9c88a9377e371c3a937eb354c367217346cc8f0deafea8465",
+    "tests/test_smoke.py": "d7f22892f618045e62159215a702cfed89f0a7c707cc685912ffc14f9ffdc425"
+  },
+  "hard_stop_minutes": 30,
+  "repository_url": "https://github.com/EvolutionsHQ/ai-engineer-screener",
+  "target_minutes": "15-20",
+  "tree_sha256": "06d9ec0c3e8f2fe94de6686b2a88479bbf6a1bd93600cd8a8439c81977cc9d15",
+  "version": "0.1.0"
+}
