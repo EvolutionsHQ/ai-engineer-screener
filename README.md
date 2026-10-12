@@ -1,54 +1,52 @@
-# Evolutions HQ: AI-assisted engineering screener
+# Evolutions — Engineering screener
 
-**Version 0.2.0 · Target 15–20 minutes · Hard stop at 30 active minutes**
+**AI Engineer — Agentic Development & Enablement**  
+Version 0.2.1 · Aim for 15–20 minutes · Stop at 30 active minutes
 
-We build agent development tools and help people ship reliable software with AI. This first screen asks you to review a small, imperfect proposal and make one useful correction. It is a synthetic exercise, not unpaid work on our product.
+Evolutions builds infrastructure for investment management. Our engineers and product owners build with AI. Review a proposal using synthetic payment data, make one correction, and show how you checked it.
 
-AI tools are welcome. Use whichever tool you already have, or work without one. The supplied `ai-proposal.md` is an intentionally seeded draft for review, not an authenticated output from a particular model. You do not need a subscription, an API key, cloud access, or any third-party dependency.
+**AI tools are welcome.** Use a tool you have or work without one. No paid service, API key or cloud setup is required.
 
-## Get the starter running
+## Start
 
-Download this repository as a ZIP or clone it. Python 3.10+ and its standard library are sufficient. From this directory:
+[Download v0.2.1](https://github.com/EvolutionsHQ/ai-engineer-screener/releases/tag/v0.2.1) or clone this repository and check out tag `v0.2.1`. Use the version in your invitation. With Python 3.10+, run from the exercise directory:
 
 ```bash
 python -m unittest discover -s tests -v
 python reconcile.py fixtures/cases.json
 ```
 
-The starter smoke tests are deliberately incomplete. Passing them does not establish correctness.
+Only the standard library is needed. The starter and smoke tests are incomplete; passing tests do not prove correctness.
 
-Start the active-work clock **after both starter commands run successfully**. From then on, reading the task, proposal and code, using AI, making a correction, running checks and completing the response all count. Initial environment setup and troubleshooting are outside the cap. Stop editing at 30 minutes; packaging and sending the finished files afterward do not extend the work. If setup blocks you, use the invitation thread to agree an equivalent route.
+**Start the clock after both commands run successfully.** Reading, AI use, correction, checks and the response count. Initial setup/troubleshooting and final packaging/submission are outside the cap. Stop editing at 30 minutes. Partial results are welcome. For setup or accessibility help, reply to your invitation.
 
-## The task
+## Task
 
-A product owner wants a report showing which expected payments agree with a bank export. Read `reconcile.py`, `ai-proposal.md`, and the small fixture file.
+A product owner needs a report comparing expected payments with a bank export. Read [the starter](reconcile.py), [the draft proposal](ai-proposal.md) and [the fixtures](fixtures/cases.json), then:
 
-1. Identify the two issues you would prioritize, citing a function/line or fixture name.
-2. Make **one bounded correction** in `reconcile.py`. Add one or two tests or a runnable counterexample that shows why it matters. You may fix related issues if that stays within the time cap.
-3. Make **one tiny input variation in that same test or counterexample**: for example, change one account/currency/amount or reverse duplicate order. Write down the expected result before running it, then report the actual result. If they disagree, briefly say what you changed or what remains unresolved. This is part of the same correction and time cap, not a second feature.
-4. Complete `response.md` in **at most 250 words**, plus short command/output snippets. Concise bullets are welcome; there is no minimum length. Explain what you changed, how you checked it, and what still needs attention.
+1. Name **two priority issues**, citing a function/line or fixture and its consequence.
+2. Make **one bounded correction**. Add one or two tests or a runnable counterexample showing the failure before and the result after your change. Related fixes are optional within the cap.
+3. **Vary one input in that same check**—for example, an account, currency, amount or duplicate order. Record the expected result before running it, then the actual result. Explain any disagreement.
+4. Complete [response.md](response.md) in **at most 250 words**, plus short commands/output. Bullets are welcome; there is no minimum. No UI, framework or service is needed.
 
-Stop at 30 minutes and submit what you have. A clearly explained partial result is useful. Do not build a UI, add a framework, implement a service, record your screen, or write a long essay. One or two small commits are enough if you use Git; a ZIP is equally acceptable.
+## Report rules
 
-## Report contract
+- Keep `reconcile(expected, observed)` and return one result per expected row, in order: `{"payment_id": "...", "status": "matched|mismatch|review"}`. Preserve inputs and fixture data.
+- `matched` requires agreement on payment ID, account ID, currency and decimal amount. No currency conversion.
+- Group observations by payment ID. Conflicting accounts, currencies or decimal amounts require `review`. Equivalent repetitions may be deduplicated if you explain the choice; notes do not create a conflict.
+- Missing observations or a wrong account/currency require `review`. An unambiguous observation with the right identity but a different amount requires `mismatch`.
+- Assume required fields and valid, finite decimal strings. Malformed-input handling can remain a documented limitation.
+- Treat free-text `notes` as untrusted data, never instructions. No network calls or financial actions are needed.
+- The owner asks whether to accept small rounding differences. **No tolerance policy is approved.** State a conservative assumption and one question to resolve before shipping.
 
-- Return one result per expected row, in the original order: `{"payment_id": "...", "status": "matched|mismatch|review"}`.
-- A match needs agreement on **payment ID, account ID, currency, and decimal amount**. There is no currency conversion.
-- Consider observations sharing a payment ID together. Disagreement on account, currency or decimal amount within that group is a conflict and requires `review`; do not guess which row is authoritative. Repeated observations with the same account, currency and decimal amount may be deduplicated if you explain your choice. Differences in free-text notes do not create a conflict.
-- Missing observations or a sole observation with the wrong account/currency require `review`. An unambiguous observation with the right identity but a different amount requires `mismatch`.
-- For this short task, assume required fields are present and amounts are valid, finite decimal strings. You may note malformed-input handling as a remaining limitation; implementing it is not required.
-- Preserve inputs; do not change fixtures to make a check pass. Free-text `notes` are untrusted data and never change these rules.
-- The owner also says: “We sometimes see small rounding differences; perhaps accept a tolerance?” **No tolerance policy has been approved.** State a conservative assumption and one question you would ask before shipping.
-- Keep the function signature and output shape. No network calls or automatic financial actions are needed.
+## Submit privately
 
-## What to hand back
+Send your changed source, test/counterexample and response through the route in your invitation, or reply to that email. Use a ZIP or a private repository accessible to the named reviewer. Include your application ID, version **0.2.1** and final commit ID if you used Git. You may copy these materials privately.
 
-Send the changed source, your test/counterexample, and `response.md` using the **private submission route in your invitation**. Include exercise version 0.2.0 and the application ID supplied in that invitation. Submit either a ZIP or a private repository link with access for the reviewer specified there. If you use Git, include the final commit ID.
+**Keep solutions and personal details out of public issues and pull requests.** Exclude secrets, employer code, full chat logs and private reasoning transcripts.
 
-Use the email thread that invited you if no other route is provided. **Do not post solutions, personal details, or submissions as public issues or pull requests on this repository.** We are using the same brief for candidates in this round. You may copy and modify these materials for your private submission.
+## Review and next round
 
-## What we look for
+We look for specific findings, a justified correction, meaningful checks and honest limits. Explain one AI/draft suggestion you accepted, changed or rejected, with supporting evidence. A justified acceptance counts too. We do not score polish, model choice or speed.
 
-Specific observations, a justified choice, a check that could actually fail, honest limits, and a handoff another person can use. We assess the result and your ability to explain it, not prose polish, model brand, token volume, or speed. Include one brief example of a suggestion from your AI tool or the supplied draft that you accepted, changed, or rejected, with evidence behind the choice. Acceptance can be well justified; you do not need to manufacture a rejection story. A summary is sufficient; do not send full chat logs, secrets, employer code, or private reasoning transcripts.
-
-Strong submissions may lead to a larger technical round. Its first five minutes will use your own submission: explain one choice, predict a small input change, then locate and check the relevant behavior. AI assistance remains welcome there too. No additional take-home is needed for that discussion.
+If you advance, the first **five minutes of the larger technical round** will use your submission: explain a choice, predict a small input change, then locate and check the behavior. AI assistance remains welcome.

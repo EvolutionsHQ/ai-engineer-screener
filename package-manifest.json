@@ -11,11 +11,11 @@
   "files": {
     ".github/workflows/smoke.yml": "2cbf816302b46c1bf016e01ee68fba9a8c440c3b24ca8482a8247dde3aa94872",
     ".gitignore": "7302863dbdec542d6e85f3f21e52c58f505ad1943b3b39e4a69a8123b464b453",
-    "README.md": "97f40941e3190057dae296aa1cc0d8f13f3fd41552c6dc2600d753686e757ca3",
-    "ai-proposal.md": "da185fa7d8ecbb7b7b769053679a01ba4045cdd8e15fe715397b3163f1078437",
-    "fixtures/cases.json": "864cf2a10be2c7c00b2a0850e08e9f2ab51a0a5dab4a042ae2a9302b297b82c1",
+    "README.md": "8e165883631a284ac74a1032258552ef158176b82e46a1f876db9ebcae5a2b7d",
+    "ai-proposal.md": "b2d82d3ed2899f520fdc43fa941e39637702d6abd08c113f2b5e49745e128faa",
+    "fixtures/cases.json": "4d11906fc9f45545545060be3ea68d38630eec8693ae8137c5f2a3458e9d6e19",
     "reconcile.py": "bcedd3616f6548ba6863e03cf5388ad03c9dc15092ee3f7a35de8bac5fc33f36",
-    "response.md": "dc6aaa7eb9198c04b4746f77ff379f92afad954de2b478530539feaef6b02cbd",
+    "response.md": "502b169f82f15e3773e8d3b721e01e2d0b56f3b6b918f81426ec0f10ca38bd04",
     "tests/test_smoke.py": "d7f22892f618045e62159215a702cfed89f0a7c707cc685912ffc14f9ffdc425"
   },
   "hard_stop_minutes": 30,
@@ -27,6 +27,6 @@
   "repository_url": "https://github.com/EvolutionsHQ/ai-engineer-screener",
   "required_input_variations": 1,
   "target_minutes": "15-20",
-  "tree_sha256": "a299b7c8d45dfd86262a42a4eba6bda8e1e719deacfafdb6b400243110d4cbe1",
-  "version": "0.2.0"
+  "tree_sha256": "6e581acecba2bee2472dcb11ff4147923aaaf0f1a417c886407231e0f74ad883",
+  "version": "0.2.1"
 }

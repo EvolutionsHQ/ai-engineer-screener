@@ -1,30 +1,30 @@
-# Response — exercise 0.2.0
+# Response — v0.2.1
 
-At most 250 words across the answers; concise bullets are welcome. Short commands/output snippets do not count toward this limit.
+At most 250 words; bullets welcome. Short commands/output are separate.
 
-Application ID:
-Approximate active time (after the starter ran):
-Tools used (or none):
-Final commit ID (if using Git):
+- Application ID:
+- Active time after both starter commands succeeded:
+- Tools used (or none):
+- Final commit ID (if using Git):
 
-## 1. Two priority findings
+## 1. Priority issues
 
-Name the exact function/line or fixture and the failure it can cause. Keep each finding brief and specific.
+Name two findings: function/line or fixture, and consequence.
 
-## 2. My bounded change and policy choice
+## 2. Correction and policy
 
-What did you change, why did you choose it, and what conservative assumption/question did you use for the owner's tolerance request?
+What did you change and why? State your tolerance assumption and one question for the owner.
 
-## 3. Evidence
+## 3. Checks
 
-Show an exact command and a small before/after result for a counterexample. State which checks you actually ran and which you did not. If a check could not run, say so.
+Show the command and counterexample result before/after the correction. State what ran, what did not, and any unresolved failure.
 
-For one tiny input variation in that same test/counterexample, record: **changed input → expected result before running → actual result**. Note a disagreement or revision if there was one. Keep it within the same 30-minute cap.
+For one input variation in that same check: **changed input → expected result recorded before running → actual result**. Explain any disagreement.
 
-## 4. Steering and limits
+## 4. AI/draft review and limits
 
-Give one brief example of a suggestion from your AI tool or the supplied draft you accepted, changed, or rejected, and the evidence behind that decision. Well-supported acceptance is fine. List the most important remaining limitation. Summarize decisions; no full chat log is needed.
+Name one suggestion you accepted, changed or rejected and the evidence for that decision. State the main remaining limitation.
 
 ## 5. Handoff
 
-Briefly explain to a product owner what is safer now and whether you would ship this report as-is.
+What is safer now? Would you ship it as-is?
