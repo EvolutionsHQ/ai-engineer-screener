@@ -1,7 +1,9 @@
-# Response — exercise 0.1.0
+# Response — exercise 0.2.0
+
+At most 250 words across the answers; concise bullets are welcome. Short commands/output snippets do not count toward this limit.
 
 Application ID:
-Approximate active time:
+Approximate active time (after the starter ran):
 Tools used (or none):
 Final commit ID (if using Git):
 
@@ -17,10 +19,12 @@ What did you change, why did you choose it, and what conservative assumption/que
 
 Show an exact command and a small before/after result for a counterexample. State which checks you actually ran and which you did not. If a check could not run, say so.
 
+For one tiny input variation in that same test/counterexample, record: **changed input → expected result before running → actual result**. Note a disagreement or revision if there was one. Keep it within the same 30-minute cap.
+
 ## 4. Steering and limits
 
-Give one brief example of an AI/draft suggestion you accepted, changed, or rejected, and the evidence behind that decision. List the most important remaining limitation. Summarize decisions; no full chat log is needed.
+Give one brief example of a suggestion from your AI tool or the supplied draft you accepted, changed, or rejected, and the evidence behind that decision. Well-supported acceptance is fine. List the most important remaining limitation. Summarize decisions; no full chat log is needed.
 
 ## 5. Handoff
 
-In two or three sentences, explain to a product owner what is safer now and whether you would ship this report as-is.
+Briefly explain to a product owner what is safer now and whether you would ship this report as-is.
