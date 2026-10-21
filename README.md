@@ -18,14 +18,14 @@ python reconcile.py fixtures/cases.json
 
 Only the standard library is needed. The starter and smoke tests are incomplete; passing tests do not prove correctness.
 
-**Start the clock after both commands run successfully.** Reading, AI use, correction, checks and the response count. Initial setup/troubleshooting and final packaging/submission are outside the cap. Stop editing at 30 minutes. Partial results are welcome. For setup or accessibility help, reply to your invitation.
+**Start the clock after both commands run successfully.** Reading, AI use, correction, checks and the response count. Initial setup/troubleshooting and final packaging/submission are outside the cap. Stop editing at 30 minutes. Partial results are welcome. If either command still fails after 10 minutes of setup, stop and reply to your invitation so we can agree an equivalent route. For other accessibility needs, reply so we can agree an equivalent route. Setup or accessibility difficulties do not count against your review.
 
 ## Task
 
 A product owner needs a report comparing expected payments with a bank export. Read [the starter](reconcile.py), [the draft proposal](ai-proposal.md) and [the fixtures](fixtures/cases.json), then:
 
 1. Name **two priority issues**, citing a function/line or fixture and its consequence.
-2. Make **one bounded correction**. Add one or two tests or a runnable counterexample showing the failure before and the result after your change. Related fixes are optional within the cap.
+2. Make **one bounded correction**. Add one or two tests or a runnable counterexample showing the failure before and the result after your change. You are not expected to fix every issue; name the important limitations that remain. Related fixes are optional within the cap.
 3. **Vary one input in that same check**—for example, an account, currency, amount or duplicate order. Record the expected result before running it, then the actual result. Explain any disagreement.
 4. Complete [response.md](response.md) in **at most 250 words**, plus short commands/output. Bullets are welcome; there is no minimum. No UI, framework or service is needed.
 
