@@ -3,10 +3,12 @@ name: CodeQL
 # CodeQL advanced setup, replacing default setup. This is a public repository:
 # it runs on a GitHub-hosted runner (owner exception), so fork pull requests
 # never reach a self-hosted runner.
+# Rollout: uploads are rejected while default setup is on; turn it off first.
 on:
   push:
     branches: [main]
   pull_request:
+    branches: [main]
   schedule:
     - cron: '17 7 * * 1' # Mondays 07:17 UTC
   workflow_dispatch:
@@ -24,6 +26,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
+      contents: read
       security-events: write
     strategy:
       fail-fast: false
@@ -41,3 +44,5 @@ jobs:
       - uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
         with:
           category: /language:${{ matrix.language }}
+          # A fork pull request's token is read-only: analyze, do not upload.
+          upload: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && 'never' || 'always' }}
